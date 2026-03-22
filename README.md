@@ -5,14 +5,14 @@
 Este projeto implementa um pipeline completo de ETL (Extração, Transformação e Carga) para processar os dados públicos do Cadastro Nacional da Pessoa Jurídica (CNPJ) disponibilizados pela Receita Federal do Brasil.
 
 ## Escopo dos Dados
-```bash
-| Script | Função | Saída |
-|--------|--------|-------|
-| `analise_empresas.py` | Processa dados das empresas | Tabela `empresas` |
-| `analise_estabelecimentos.py` | Processa estabelecimentos | Tabela `estabelecimentos` |
-| `analise_socios.py` | Processa sócios | Tabela `socios` |
-| `analise_cnaes.py` | Processa CNAEs | Tabela `cnaes` |
-```
+
+|Script|Função|
+|---|---|
+|analise_empresas.py|Processa dados das empresas|
+|analise_estabelecimentos.py|Processa estabelecimentos|
+|analise_socios.py|Processa sócios|
+|analise_cnaes.py|Processa CNAEs|
+
 ## Arquitetura do Sistema
 
 O projeto segue uma arquitetura moderna de pipeline de dados, dividida em camadas de responsabilidade.
@@ -31,45 +31,41 @@ A modelagem foi desenvolvida seguindo as melhores práticas de normalização de
 
 Todos os dados processados são provenientes de fontes oficiais do governo brasileiro:
 
-### Portal de Dados Abertos da Receita Federal
-```bash
-Base CNPJ Completa: https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/dados-abertos/cnpj
-
-Documentação Técnica: https://www.gov.br/receitafederal/pt-br/assuntos/orientacao/tributaria/cadastros/cnpj/manual-de-instrucoes-do-cnpj
-```
+Base CNPJ Completa: [Dados Abertos](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/dados-abertos/cnpj)  
+Documentação Técnica: [Manual de Instrução](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao/tributaria/cadastros/cnpj/manual-de-instrucoes-do-cnpj)
 
 ## Pré-requisitos
 
 ### Software Necessário
-```bash
+```
 Python 3.9+
 PostgreSQL 13+ (local para desenvolvimento)/AWS RDS PostgreSQL
 pgAdmin 4 (para gerenciamento do banco)
 Git (controle de versão)
 ```
 ## Processamento por Entidade
-```bash
-### 1. CNAEs (analise_cnaes.py)
+```
+1. CNAEs (analise_cnaes.py)
 
 Leitura do arquivo cnaes.csv
 Extração dos campos: cnae_fiscal, descricao
 
-### 2. Empresas (analise_empresas.py)
+2. Empresas (analise_empresas.py)
 Leitura do arquivo empresas.csv
 Extração dos campos: cnpj_basico, razao_social, natureza_juridica, qualificacao_responsavel e porte_empresa
 
-### 3. Estabelecimentos (analise_estabelecimentos.py)
+3. Estabelecimentos (analise_estabelecimentos.py)
 Leitura do arquivo estabelecimentos.csv
 Extração dos campos: cnpj_basico, ordem, dv, identificador_matriz_filial, nome_fantasia, situacao_cadastral, cnae_fiscal_principal, logradouro, uf, email
 
-### 4. Sócios (analise_socios.py)
+4. Sócios (analise_socios.py)
 Leitura do arquivo socios.csv
 Extração dos campos: cnpj_basico, identificador_de_socio, qualificacao_do_socio, nome_do_socio
 ```
 ## Como Executar
 
 ### 1. Clone o repositório
-```bash
+```
 git clone https://github.com/Gustavomedeirost/open-database-receita-federal.git
 cd open-database-receita-federal
 
@@ -88,7 +84,7 @@ LDO 2018 (Lei 13.473/2017): Segue a determinação de ocultação de dígitos do
 Lei de Acesso à Informação (12.527/2011): Dados mantidos públicos conforme determinação
 ```
 ## Contribuição
-```bash
+```
 Contribuições são bem-vindas! Por favor, siga estas etapas:
 
 Fork o projeto
@@ -99,11 +95,11 @@ Abra um Pull Request
 ```
 
 ## Licença
-
+```
 Este projeto está licenciado sob a MIT License - veja o arquivo para detalhes.
-
+```
 ## Contato e Suporte
-```bash
+```
 Autor: Gustavo Medeiros
 Email: gusmedeirost@gmail.com
 LinkedIn: www.linkedin.com/in/gustavo-medeirost
