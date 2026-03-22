@@ -44,23 +44,47 @@ pgAdmin 4 (para gerenciamento do banco)
 Git (controle de versão)
 ```
 ## Processamento por Entidade
+
+### 1. CNAEs (analise_cnaes.py)
+Leitura do arquivo cnaes.csv  
+Extração dos campos: 
 ```
-1. CNAEs (analise_cnaes.py)
-
-Leitura do arquivo cnaes.csv
-Extração dos campos: cnae_fiscal, descricao
-
-2. Empresas (analise_empresas.py)
+cnae_fiscal  
+descricao
+```
+### 2. Empresas (analise_empresas.py)
 Leitura do arquivo empresas.csv
-Extração dos campos: cnpj_basico, razao_social, natureza_juridica, qualificacao_responsavel e porte_empresa
-
-3. Estabelecimentos (analise_estabelecimentos.py)
-Leitura do arquivo estabelecimentos.csv
-Extração dos campos: cnpj_basico, ordem, dv, identificador_matriz_filial, nome_fantasia, situacao_cadastral, cnae_fiscal_principal, logradouro, uf, email
-
-4. Sócios (analise_socios.py)
-Leitura do arquivo socios.csv
-Extração dos campos: cnpj_basico, identificador_de_socio, qualificacao_do_socio, nome_do_socio
+Extração dos campos:
+```
+cnpj_basico  
+razao_social  
+natureza_juridica  
+qualificacao_responsavel  
+porte_empresa  
+```
+### 3. Estabelecimentos (analise_estabelecimentos.py)
+Leitura do arquivo estabelecimentos.csv  
+Extração dos campos:
+```
+ cnpj_basico  
+ ordem  
+ dv  
+ identificador_matriz_filial  
+ nome_fantasia  
+ situacao_cadastral  
+ cnae_fiscal_principal  
+ logradouro  
+ uf  
+ email  
+```
+### 4. Sócios (analise_socios.py)
+Leitura do arquivo socios.csv  
+Extração dos campos:  
+```
+cnpj_basico  
+identificador_de_socio  
+qualificacao_do_socio  
+nome_do_socio  
 ```
 ## Como Executar
 
@@ -78,38 +102,35 @@ python analise_estabelecimentos.py
 python analise_socios.py
 ```
 ## Conformidade Legal
-```
-LGPD (Lei 13.709/2018): Adequado por meio da anonimização de dados pessoais
-LDO 2018 (Lei 13.473/2017): Segue a determinação de ocultação de dígitos do CPF
-Lei de Acesso à Informação (12.527/2011): Dados mantidos públicos conforme determinação
-```
-## Contribuição
-```
-Contribuições são bem-vindas! Por favor, siga estas etapas:
 
-Fork o projeto
-Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
-Commit suas mudanças (git commit -m 'Add some AmazingFeature')
-Push para a branch (git push origin feature/AmazingFeature)
+LGPD (Lei 13.709/2018): Adequado por meio da anonimização de dados pessoais  
+LDO 2018 (Lei 13.473/2017): Segue a determinação de ocultação de dígitos do CPF  
+Lei de Acesso à Informação (12.527/2011): Dados mantidos públicos conforme determinação  
+
+## Contribuição
+
+Contribuições são bem-vindas! Por favor, siga estas etapas:  
+
+Fork o projeto  
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)  
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')  
+Push para a branch (git push origin feature/AmazingFeature)  
 Abra um Pull Request
-```
 
 ## Licença
-```
-Este projeto está licenciado sob a MIT License - veja o arquivo para detalhes.
-```
+
+Este projeto está licenciado sob a [MIT License](https://github.com/Gustavomedeirost/open-database-receita-federal/blob/377a3d9c1188823549939a476c2492ad254ead59/README.md#L98)
+
 ## Contato e Suporte
-```
-Autor: Gustavo Medeiros
-Email: gusmedeirost@gmail.com
-LinkedIn: www.linkedin.com/in/gustavo-medeirost
+
+Autor: Gustavo Medeiros  
+Email: gusmedeirost@gmail.com  
+LinkedIn: www.linkedin.com/in/gustavo-medeirost  
 Issues: GitHub Issues
-```
+
 ## Agradecimentos
 
-Receita Federal do Brasil pela disponibilização dos dados abertos
-Comunidade Python pelas bibliotecas essenciais
-AWS pela infraestrutura em nuvem
+Receita Federal do Brasil pela disponibilização dos dados abertos  
+Comunidade Python pelas bibliotecas essenciais  
+AWS pela infraestrutura em nuvem  
 Contribuidores que ajudam a melhorar este projeto
-
-### Se este projeto te ajudou, considere dar uma estrela no GitHub!
